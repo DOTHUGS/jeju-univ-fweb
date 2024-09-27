@@ -1,4 +1,4 @@
-let playerCards = [10, 7];
+let playerCards = [10, 11];
 let playerSum = playerCards.reduce((a, b) => a + b, 0);
 
 let dealerCards = [8, 5];
@@ -13,16 +13,16 @@ if (playerSum === 21) {
         let newCard = Math.floor(Math.random() * 11) + 1;
         dealerSum += newCard
     }
+    if (dealerSum > 21) {
+        console.log(`dealer ${dealerSum} bust You Win`)
+    } else if (playerSum === dealerSum) {
+        console.log('Draw')
+    } else if (playerSum > dealerSum) {
+        console.log(`dealer ${dealerSum} bust You Win`)
+    } else {
+        console.log(`you ${playerSum} bust dealer ${dealerSum} Win`)
+    }
 } 
-if (dealerSum > 21) {
-    console.log(`dealer ${dealerSum} bust You Win`)
-} else if (playerSum === dealerSum) {
-    console.log('Draw')
-} else if (playerSum > dealerSum) {
-    console.log(`dealer ${dealerSum} bust You Win`)
-} else {
-    console.log(`you ${playerSum} bust dealer ${dealerSum} Win`)
-}
 
 
 

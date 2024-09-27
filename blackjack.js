@@ -21,7 +21,7 @@ if (dealerSum > 21) {
 } else if (playerSum > dealerSum) {
     console.log(`dealer ${dealerSum} bust You Win`)
 } else {
-    console.log(`you bust dealer ${dealerSum} Win`)
+    console.log(`you ${playerSum} bust dealer ${dealerSum} Win`)
 }
 
 

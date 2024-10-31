@@ -1,0 +1,30 @@
+<html>
+   <head>
+      <title>
+         Typing game
+      </title>
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+      <div class="content-container">
+         <h1>Typing game!</h1>
+         <p>셜록 홈즈의 명언을 인용하여 타이핑 실력을 연습하세요. <br>시작하려면 <strong>시작</strong>을 클릭하세요!</p>
+         <p id="startTime"></p>
+         <p id="quote"></p>
+         <p id="message"></p>
+         <div>
+            <input type="text" aria-label="current word" id="typed-value" placeholder="여기에 입력" />
+            <button type="button" id="start">시작!</button>
+         </div>
+         <div id="result-modal" class="modal">
+            <div class="modal-content">
+               <h2>타이핑 게임 결과</h2>
+               <p id="final-message"></p>
+               <p id="best-score"></p>
+               <button id="close-modal">닫기</button>
+            </div>
+         </div>
+      </div>
+   <script src="script.js"></script>
+   </body>
+ </html>

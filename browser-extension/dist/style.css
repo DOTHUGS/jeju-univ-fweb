@@ -1,0 +1,119 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,button{margin:0;padding:0}
+fieldset,img{border:0 none}
+dl,ul,ol,menu,li{list-style:none}
+blockquote, q{quotes:none}
+blockquote:before, blockquote:after,q:before, q:after{content:'';content:none}
+input,select,textarea,button{vertical-align:middle;font-size:100%}
+button{border:0 none;background-color:transparent;cursor:pointer}
+table{border-collapse:collapse;border-spacing:0}
+body{-webkit-text-size-adjust:none} /* 뷰포트 변환시 폰트크기 자동확대 방지. */
+input[type='text'],input[type='password'],input[type='submit'],input[type='search'],input[type='tel'],input[type='email'],html
+input[type='button'],input[type='reset']{-webkit-appearance:none;border-radius:0}
+input[type='search']::-webkit-search-cancel-button{-webkit-appearance:none}
+body{background:#fff}
+body,th,td,input,select,textarea,button{font-size:14px;line-height:1.5;font-family:'Malgun Gothic','맑은 고딕',sans-serif;color:#333} /* color값은 디자인가이드에 맞게사용 */
+a{color:#333;text-decoration:none}
+a:active, a:hover{text-decoration:none}
+address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
+
+h1, h2 {
+    text-align: center; /* 텍스트를 가운데 정렬 */
+    font-size: 25px;
+}
+
+img {
+    width: 90%;
+    height: 90%;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 400px; /* 페이지 전체의 최대 너비를 400px로 제한 */
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    padding: 10px;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 400px; /* 폼의 최대 너비를 400px로 제한 */
+    margin: 0 auto; /* 화면 중앙에 배치 */
+    padding: 10px;
+}
+
+
+
+.form-data label {
+    display: block;
+    font-size: 15px;
+    margin: 0.5em 0 0.2em;
+    font-weight: bold;
+    color: #000000;
+}
+
+.form-data input[type="text"] {
+    width: 100%;
+    height: 40%;
+    padding: 10px;
+    border: 1px solid #dfdfdf;
+    background-color: #dfdfdf;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.form-data {
+    display: flex;
+    flex-direction: column; /* 세로 배치 */
+    align-items: center; /* 가로 정렬 */
+    text-align: center;
+    width : 100%
+}
+
+button.search-btn {
+    width: 80px;
+    height: 40px;
+    font-size: 18px;
+    background-color: #6e6bff;
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px; /* 버튼 위에 여백 추가 */
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #000000; /* 배경을 어두운 색으로 변경 */
+        color: #ffffff; /* 텍스트를 밝은 색으로 변경 */
+    }
+
+    .form-data input[type="text"] {
+        background-color: #333333; /* 입력 상자의 배경을 어두운 색으로 변경 */
+        color: #ffffff; /* 입력 상자 안의 텍스트 색상을 밝게 설정 */
+        border: 1px solid #555555; /* 입력 상자 테두리 색상 변경 */
+    }
+
+    .form-data label {
+        color: #ffffff;
+    }
+
+    button.search-btn {
+        background-color: #00076b; /* 버튼 배경색을 어두운 톤으로 변경 */
+        color: #ffffff; /* 버튼 텍스트를 밝게 설정 */
+    }
+
+    h1, h2 {
+        color: #ffffff; /* 제목 텍스트를 밝게 설정 */
+    }
+
+    img {
+        opacity: 0.8; /* 이미지의 밝기를 살짝 낮춰서 다크 모드에 맞춤 */
+    }
+}

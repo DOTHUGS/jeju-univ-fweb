@@ -1,0 +1,98 @@
+.highlight {
+    background-color: yellow;
+}
+.error {
+    background-color: lightcoral;
+    border: red;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.content-container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 600px;
+    width: 120%;
+}
+
+h1 {
+    color: #333; 
+}
+
+p {
+    color: #666;
+}
+
+input[type="text"] {
+    width: 300px; 
+    height: 50px; 
+    font-size: 16px; 
+    padding: 5px; 
+    border-radius: 8px;
+    border: 2px solid #ccc; 
+    box-sizing: border-box; 
+}
+
+/* 모달 창 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+button {
+    width: 100px; 
+    height: 48px; 
+    font-size: 20px; 
+    padding: 5px;
+    background-color: #0400ff; 
+    color: rgb(255, 255, 255); 
+    border: none; 
+    border-radius: 8px; 
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0059ff;
+}
+
+button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.error {
+    animation: shake 0.3s ease;
+}
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}

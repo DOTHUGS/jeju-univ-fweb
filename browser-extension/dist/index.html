@@ -19,8 +19,16 @@
     </div>
     <div>
         <label for="region">Region Name</label>
-        <input type="text" id="region" required class="region-name" /> <!--required 브라우저에서 지원-->
+        <input type="text" id="region" required class="region-name1" /> <!--required 브라우저에서 지원-->
     </div>
+    <div>
+      <label for="region">Region Name</label>
+      <input type="text" id="region" required class="region-name2" /> <!--required 브라우저에서 지원-->
+  </div>
+  <div>
+    <label for="region">Region Name</label>
+    <input type="text" id="region" required class="region-name3" /> <!--required 브라우저에서 지원-->
+</div>
     <div>
         <label for="api">Your API Key from tmrow</label>
         <input type="text" id="api" required class="api-key" />
@@ -33,11 +41,24 @@
     <div class="errors"></div>
     <div class="data"></div>
     <div class="result-container">
-        <p><strong>Region: </strong><span class="my-region"></span></p>
-        <p><strong>Carbon Usage: </strong><span class="carbon-usage"></span></p>
-        <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel"></span></p>
+      <div class="result-region">
+        <p><strong>Region: </strong><span class="my-region1"></span></p>
+        <p><strong>Carbon Usage: </strong><span class="carbon-usage1"></span></p>
+        <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel1"></span></p>
+      </div>
+      <div class="result-region2">
+        <p><strong>Region: </strong><span class="my-region2"></span></p>
+        <p><strong>Carbon Usage: </strong><span class="carbon-usage2"></span></p>
+        <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel2"></span></p>
+      </div>
+      <div class="result-region3">
+        <p><strong>Region: </strong><span class="my-region3"></span></p>
+        <p><strong>Carbon Usage: </strong><span class="carbon-usage3"></span></p>
+        <p><strong>Fossil Fuel Percentage: </strong><span class="fossil-fuel3"></span></p>
+      </div>
     </div>
     <button class="clear-btn">Change region</button>
  </div>
+ <script src="./main.js"></script>
  </body>
  </html>

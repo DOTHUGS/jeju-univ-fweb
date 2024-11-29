@@ -17,64 +17,41 @@ a:active, a:hover{text-decoration:none}
 address,caption,cite,code,dfn,em,var{font-style:normal;font-weight:normal}
 
 h1, h2 {
-    text-align: center; /* 텍스트를 가운데 정렬 */
-    font-size: 25px;
+    font-size: 20px;
+    padding: 5px;
 }
 
 img {
-    width: 95%;
-    height: 90%;
+    width: 300px;
+    height: 200px;
+    padding: 10px;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    min-height: 100vh;
-    max-width: 400px; /* 페이지 전체의 최대 너비를 400px로 제한 */
-    margin: 0 auto; /* 화면 중앙에 배치 */
-    padding: 10px;
+    text-align: center;
+    max-width: 350px;
+    min-height: 600px;
     background-color: #ffffff;
 }
 
-.container {
-    display: flex;
+.form-data label {
+    display: flex; 
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    min-height: 100vh;
-    max-width: 400px; /* 폼의 최대 너비를 400px로 제한 */
-    margin: 0 auto; /* 화면 중앙에 배치 */
-    padding: 10px;
-}
-
-
-
-.form-data label {
-    display: block;
-    font-size: 15px;
-    margin: 0.5em 0 0.2em;
+    font-size: 16px;
     font-weight: bold;
     color: #000000;
 }
 
 .form-data input[type="text"] {
-    width: 100%;
-    height: 40px;
-    padding: 10px;
+    width: 190px;
+    height: 30px;
+    margin-top: 5px;
+    padding: 5px;
     border: 1px solid #dfdfdf;
     background-color: #dfdfdf;
     border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.form-data {
-    display: flex;
-    flex-direction: column; /* 세로 배치 */
-    align-items: center; /* 가로 정렬 */
-    text-align: center;
-    width : 100%
 }
 
 button.search-btn {
@@ -85,7 +62,7 @@ button.search-btn {
     color: rgb(255, 255, 255);
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 10px; /* 버튼 위에 여백 추가 */
+    margin-top: 5px;
 }
 
 @media (prefers-color-scheme: dark) {

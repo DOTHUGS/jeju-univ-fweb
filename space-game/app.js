@@ -185,16 +185,16 @@ function createHero() {
     centerX - 45 - 70, centerY + 10
   );
   lefthero.img = heroImg;
-  lefthero.width = hero.width * 0.7;  // 폭 70%
-  lefthero.height = hero.height * 0.7; // 높이 70%
+  lefthero.width = hero.width * 0.7;
+  lefthero.height = hero.height * 0.7;
   gameObjects.push(lefthero);
 
   righthero = new Hero(
     centerX - 45 + 100, centerY + 10
   );
   righthero.img = heroImg;
-  righthero.width = hero.width * 0.7;  // 폭 70%
-  righthero.height = hero.height * 0.7; // 높이 70%
+  righthero.width = hero.width * 0.7;
+  righthero.height = hero.height * 0.7;
   gameObjects.push(righthero);
   
   [hero, lefthero, righthero].forEach((player) => {

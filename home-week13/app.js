@@ -97,15 +97,16 @@ class Enemy extends GameObject {
 
     // 보스가 메테오 발사
     if (this.isBoss) {
-      //console.log('Boss detected'); // Debug message
-      setInterval(() => {
-        this.fireMeteor();
-      }, 10000); // 10초 간격으로 메테오 발사
-    } else {
-      //console.log('Regular enemy detected'); // Debug message
+      this.meteorInterval = setInterval(() => {
+        if (!this.dead) {
+          this.fireMeteor(); // 보스가 살아있을 때만 메테오 발사
+        } else {
+          clearInterval(this.meteorInterval); // 보스가 죽으면 메테오 발사 중단
+        }
+      }, 10000);
     }
   }
-
+  
   fireMeteor() {
     //console.log("Meteor fired by Boss"); // Debug message
     const meteorImg = Math.random() > 0.5 ? meteorBigImg : meteorSmallImg;

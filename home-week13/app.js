@@ -97,7 +97,7 @@ class Enemy extends GameObject {
     if (this.img === bossImg) {
       setInterval(() => {
         this.fireMeteor();
-      }, 10000); // 10초 간격으로 메테오 발사
+      }, 500); // 10초 간격으로 메테오 발사
     }
   }
 
@@ -213,10 +213,29 @@ class Meteor extends GameObject {
 
 let gameLoopId;
 let stage = 1;
+let remainingTime = 60; // 남은시간 60초로 설정
+
+let heroImg, leftheroImg, rightheroImg, enemyImg, laserImg, lifeImg, canvas, ctx, gameObjects = [], hero, eventEmitter = new EventEmitter();
+
+let onKeyDown = function (e) {
+  console.log(e.keyCode);
+  switch (e.keyCode) {
+    case 37: // 왼쪽 화살표
+    case 39: // 오른쪽 화살표
+    case 38: // 위쪽 화살표
+    case 40: // 아래쪽 화살표
+    case 32: // 스페이스바
+      e.preventDefault();
+      break;
+    default:
+      break;
+  }
+};
 
 function initGame() {
   gameObjects = [];
   stage = 1; // Initialize stage to 1
+  remainingTime = 60; // 타이머 초기화
   createEnemies();
   createHero();
   eventEmitter.clear(); // 이벤트 리스너 중복 방지
@@ -280,6 +299,19 @@ function initGame() {
   eventEmitter.on(Messages.KEY_EVENT_ENTER, () => {
     resetGame();
   });
+
+  startTimer(); // Start the timer
+}
+
+function startTimer() {
+  let timerId = setInterval(() => {
+    if (remainingTime > 0) {
+      remainingTime--;
+    } else {
+      clearInterval(timerId);
+      eventEmitter.emit(Messages.GAME_END_LOSS); // 시간 0이 되면 게임 종료
+    }
+  }, 1000);
 }
 
 function createEnemies() {
@@ -336,8 +368,22 @@ function drawLife() {
   drawText("Points: " + hero.points, 10, canvas.height-20);
 }
 
+function drawRemainingTime(ctx) {
+  ctx.font = "30px Arial";
+  ctx.fillStyle = "red";
+  ctx.textAlign = "right";
+  ctx.fillText(`Time: ${remainingTime}s`, canvas.width - 10, 40);
+}
+
 function drawText(message, x, y) {
   ctx.fillText(message, x, y);
+}
+
+function drawStage() {
+  ctx.font = "30px Arial";
+  ctx.fillStyle = "red";
+  ctx.textAlign = "left"; 
+  drawText("Stage " + stage, 10, 40); 
 }
 
 function isHeroDead() {
@@ -351,6 +397,8 @@ function isEnemiesDead() {
 
 function drawGameObjects(ctx) {
   gameObjects.forEach(go => go.draw(ctx));
+  drawRemainingTime(ctx);
+  drawStage();
 }
 
 function loadTexture(path) {
@@ -501,22 +549,6 @@ const Messages = {
   COLLISION_ENEMY_HERO: "COLLISION_ENEMY_HERO",
   GAME_END_LOSS: "GAME_END_LOSS",
   GAME_END_WIN: "GAME_END_WIN",
-};
-let heroImg, leftheroImg, rightheroImg, enemyImg, laserImg, lifeImg, canvas, ctx, gameObjects = [], hero, eventEmitter = new EventEmitter();
-
-let onKeyDown = function (e) {
-  console.log(e.keyCode);
-  switch (e.keyCode) {
-    case 37: // 왼쪽 화살표
-    case 39: // 오른쪽 화살표
-    case 38: // 위쪽 화살표
-    case 40: // 아래쪽 화살표
-    case 32: // 스페이스바
-      e.preventDefault();
-      break;
-    default:
-      break;
-  }
 };
 
 window.addEventListener("keydown", (evt) => {

@@ -343,7 +343,7 @@ function createEnemies() {
       gameObjects.push(enemy);
     }
   }
-  console.log(`Created ${gameObjects.length} enemies for stage ${stage}`); // Debug message
+  //console.log(`Created ${gameObjects.length} enemies for stage ${stage}`); // Debug message
 }
 
 function createHero() {
